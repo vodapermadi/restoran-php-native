@@ -31,11 +31,6 @@ $show_user = mysqli_query($connection,"SELECT * FROM tb_user");
             <a href="../auth/logout.php" onclick="return confirm('yakin ingin logout?')" class="font-bold text-lg font-sans hover:underline hover:underline-offset-8 text-white">Logout</a>
         </div>
     </nav>
-    <div class="container w-full h-full mb-6">
-        <a href="create-user.php" class="py-2 px-4 bg-indigo-500 font-bold text-white rounded hover:bg-indigo-600 duration-300">
-            Add User
-        </a>
-    </div>
     <div class="container w-full h-full grid grid-cols-4 gap-4">
         <?php while ($row = mysqli_fetch_assoc($show_user)) : ?>
             <div class="flex flex-col py-2 px-4 border rounded-lg bg-gray-700">

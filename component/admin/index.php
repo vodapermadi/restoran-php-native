@@ -30,7 +30,7 @@ if ($_SESSION["admin"] == "") {
     </nav>
     <div class="container flex justify-center items-center">
         <div class="border border-yellow-500 py-4 px-8 my-20 rounded bg-gray-500 animate-bounce hover:bg-gray-600 duration-300">
-            <span class="font-bold text-xl text-white select-none">Welcome, and happy ordering</span>
+            <span class="font-bold text-xl text-white select-none">Welcome, <?= $_SESSION["admin"]; ?></span>
         </div>
     </div>
     <div class="px-8 py-12 my-5 bg-gray-700">
