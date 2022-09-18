@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
             $_SESSION["user"] = $username;
             echo "
             <script>
-                document.location.href = '../user/index.php'
+                document.location.href = './user-index.php'
                 alert('berhasil login')
             </script>
             ";
