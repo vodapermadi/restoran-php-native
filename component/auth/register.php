@@ -36,7 +36,7 @@ if(isset($_POST["submit"])){
         echo"
         <script>
             alert('data berhasil di tambahkan')
-            document.location.href = '../index.php'
+            document.location.href = '../user/index.php'
         </script>
         ";
     }
