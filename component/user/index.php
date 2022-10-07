@@ -9,10 +9,12 @@ if (isset($_POST["submit"])) {
     //check username
     $user = mysqli_query($connection, "SELECT * FROM tb_user WHERE username = '$username' AND password = '$password'");
     $data = mysqli_fetch_assoc($user);
+    $data_id = $data["id_user"];
     if (mysqli_num_rows($user) === 1) {
         // check level
         if ($data["level"] == "admin") {
             $_SESSION["admin"] = $username;
+            $_SESSION["id_admin"] = $data_id;
             echo "
             <script>
                 document.location.href = '../admin/index.php'
@@ -21,6 +23,7 @@ if (isset($_POST["submit"])) {
             ";
         }else if($data["level"] == "kasir"){
             $_SESSION["kasir"] = $username;
+            $_SESSION["id_kasir"] = $data_id;
             echo "
             <script>
                 document.location.href = '../kasir/index.php'
@@ -29,6 +32,7 @@ if (isset($_POST["submit"])) {
             ";
         }else if($data["level"] == "user"){
             $_SESSION["user"] = $username;
+            $_SESSION["id_user"] = $data_id;
             echo "
             <script>
                 document.location.href = './user-index.php'

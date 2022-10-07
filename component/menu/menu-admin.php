@@ -24,7 +24,7 @@ $show_menu = mysqli_query($connection,"SELECT * FROM tb_menu");
     <nav class="w-full h-16 mb-8 bg-gray-700 flex justify-between items-center px-5">
         <div class="text-white">
             <a href="../admin/index.php" class="font-bold text-lg mr-4 hover:underline hover:underline-offset-8">Home</a>
-            <a href="./menu.php" class="font-bold text-lg font-sans mr-4 hover:underline hover:underline-offset-8">Menu</a>
+            <a href="./menu-admin.php" class="font-bold text-lg font-sans mr-4 hover:underline hover:underline-offset-8">Menu</a>
             <a href="../admin/index-user.php" class="font-bold text-lg hover:underline hover:underline-offset-8">User</a>
         </div>
         <div>

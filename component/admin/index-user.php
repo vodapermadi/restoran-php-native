@@ -33,6 +33,18 @@ $show_user = mysqli_query($connection,"SELECT * FROM tb_user");
     </nav>
     <div class="container w-full h-full grid grid-cols-4 gap-4">
         <?php while ($row = mysqli_fetch_assoc($show_user)) : ?>
+            <?php if($row["level"] === "admin"){ ?>
+            <div class="flex flex-col py-2 px-4 border rounded-lg bg-gray-700">
+                <div class="flex flex-col my-4 h-full justify-center items-start">
+                    <span class="text-white font-bold text-lg">Username : <?= $row["username"] ?></span>
+                    <span class="text-white font-bold text-lg">Status : <?= $row["level"] ?></span>
+                </div>
+                <div class="flex h-full items-end flex-row">
+                    <a href="update-user.php?id=<?= $row["id_user"] ?>" class="text-white text-center py-2 px-4 bg-sky-600 hover:bg-sky-700 duration-300 font-bold text-lg mr-3 rounded w-full">Edit Profil</a>
+                </div>
+            </div>
+            <?php }?>
+            <?php if($row["level"] === "kasir" or $row["level"] === "user" ) {?>
             <div class="flex flex-col py-2 px-4 border rounded-lg bg-gray-700">
                 <div class="flex flex-col my-4 h-full justify-center items-start">
                     <span class="text-white font-bold text-lg">Username : <?= $row["username"] ?></span>
@@ -43,6 +55,7 @@ $show_user = mysqli_query($connection,"SELECT * FROM tb_user");
                     <a href="delete-user.php?id=<?= $row["id_user"] ?>" onclick="return confirm('ingin hapus data ini?')" class="text-white py-2 px-4 bg-red-600 hover:bg-red-700 duration-300 font-bold text-lg rounded">Delete</a>
                 </div>
             </div>
+            <?php } ?>
         <?php endwhile ?>
     </div>
 </body>

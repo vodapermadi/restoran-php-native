@@ -20,7 +20,7 @@ if ($_SESSION["kasir"] == "") {
     <nav class="w-full h-16 bg-gray-700 flex justify-between items-center px-5 bg-fixed">
         <div class="text-white">
             <a href="index.php" class="font-bold text-lg mr-4 hover:underline hover:underline-offset-8">Home</a>
-            <a href="../menu/menu-kasir.php" class="font-bold text-lg font-sans hover:underline hover:underline-offset-8 mr-4">Menu</a>
+            <a href="../transaksi/index.php" class="font-bold text-lg font-sans hover:underline hover:underline-offset-8 mr-4">Transaksi</a>
         </div>
         <div>
             <a href="../auth/logout.php" onclick="return confirm('yakin ingin logout?')" class="font-bold text-lg font-sans hover:underline hover:underline-offset-8 text-white">Logout</a>

@@ -21,6 +21,7 @@ if($_SESSION["user"] == ""){
         <div class="text-white">
             <a href="user-index.php" class="font-bold text-lg mr-4 hover:underline hover:underline-offset-8">Home</a>
             <a href="user-menu.php" class="font-bold text-lg mr-4 hover:underline hover:underline-offset-8">Menu</a>
+            <a href="cart.php" class="font-bold text-lg mr-4 hover:underline hover:underline-offset-8">Cart</a>
         </div>
         <div>
             <a href="../auth/logout.php" onclick="return confirm('yakin ingin logout?')" class="font-bold text-lg font-sans hover:underline hover:underline-offset-8 text-white">Logout</a>

@@ -14,6 +14,7 @@ function updateUser($data){
     $id = $data["id"];
     $username = $data["username"];
     $level = $data["level"];
+    $password = $data["password"];
     
     if($level === ""){
         echo"
@@ -26,7 +27,8 @@ function updateUser($data){
 
     mysqli_query($connection,"UPDATE tb_user SET
         username = '$username',
-        level = '$level'
+        level = '$level',
+        password = '$password'
         WHERE id_user = $id
     ");
 
@@ -67,6 +69,9 @@ if(isset($_POST["submit"])){
             </div>
             <div class="w-full flex justify-center items-center my-2">
                 <input type="text" name="username" value="<?= $row["username"] ?>" placeholder="Name" class="w-1/2 py-2 px-4 font-semibold text-lg focus:outline-none rounded-lg">
+            </div>
+            <div class="w-full flex justify-center items-center my-2">
+                <input type="text" name="password" value="<?= $row["password"] ?>" placeholder="Password" class="w-1/2 py-2 px-4 font-semibold text-lg focus:outline-none rounded-lg">
             </div>
             <div class="w-1/2 flex justify-center items-center my-2">
                 <select name="level" id="" class="w-full py-2 px-4 outline-none font-semibold text-lg rounded-lg">
