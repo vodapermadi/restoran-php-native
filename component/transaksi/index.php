@@ -5,7 +5,8 @@ session_start();
 
 $transactions = mysqli_query($connection,
     "SELECT * FROM tb_transaksi
-    INNER JOIN tb_user ON tb_transaksi.id_user = tb_user.id_user"
+    INNER JOIN tb_user ON tb_transaksi.id_user = tb_user.id_user
+    ORDER BY status ASC,id_transaksi DESC"
 );
 
 function changeStatus($data)

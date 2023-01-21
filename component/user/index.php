@@ -40,6 +40,13 @@ if (isset($_POST["submit"])) {
             </script>
             ";
         }
+    }else{
+        echo "
+        <script>
+            alert('password atau username salah')
+            document.location.href = 'index.php'
+        </script>
+        ";
     }
 }
 

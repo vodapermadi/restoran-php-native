@@ -20,6 +20,7 @@ function updateUser($data){
         echo"
         <script>
             alert('harap isi status user')
+            document.location.href == 'update-user.php'
         </script>
         ";
         return false;
@@ -37,7 +38,11 @@ function updateUser($data){
 
 if(isset($_POST["submit"])){
     if(updateUser($_POST) > 0){
-        header("location: index-user.php");
+        echo"
+        <script>
+            document.location.href = 'index-user.php'
+        </script>
+        ";
     }
 }
 
@@ -62,7 +67,7 @@ if(isset($_POST["submit"])){
         </div>
     </nav>
     <div class="flex justify-center items-center w-full h-full">
-        <form method="post" action="" enctype="multipart/form-data" class="w-1/2 h-full border border-yellow-300 rounded-lg flex flex-col justify-center items-center py-12 mt-5 bg-yellow-400">
+        <form method="post" action="" class="w-1/2 h-full border border-yellow-300 rounded-lg flex flex-col justify-center items-center py-12 mt-5 bg-yellow-400">
             <input type="hidden" name="id" value="<?= $row["id_user"] ?>">
             <div class="mb-5">
                 <img src="../../img/logo2.png" alt="">
@@ -74,7 +79,7 @@ if(isset($_POST["submit"])){
                 <input type="text" name="password" value="<?= $row["password"] ?>" placeholder="Password" class="w-1/2 py-2 px-4 font-semibold text-lg focus:outline-none rounded-lg">
             </div>
             <div class="w-1/2 flex justify-center items-center my-2">
-                <select name="level" id="" class="w-full py-2 px-4 outline-none font-semibold text-lg rounded-lg">
+                <select name="level" id="" class="w-full py-2 px-4 outline-none font-semibold text-lg rounded-lg" value-selected="<?= $row["level"] ?>" select >
                     <option value="">--</option>
                     <option value="admin">Admin</option>
                     <option value="kasir">Kasir</option>

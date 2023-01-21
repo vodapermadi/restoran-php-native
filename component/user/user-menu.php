@@ -31,7 +31,7 @@ if(isset($_POST["add-to-cart"])){
         echo "
         <script>
             alert('keranjang di tambahkan')
-            document.location.href = 'user-menu.php'
+            document.location.href = 'cart.php'
         </script>
         ";
     }
