@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2022 at 01:17 AM
+-- Generation Time: Jan 21, 2023 at 04:10 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -53,7 +53,7 @@ CREATE TABLE `tb_menu` (
 --
 
 INSERT INTO `tb_menu` (`id_menu`, `name`, `price`, `image_menu`) VALUES
-(12, 'nasi kotak', 25000, '63254b8f282e6.jfif'),
+(12, 'nasi kotak', 28000, '63254b8f282e6.jfif'),
 (13, 'nasi padang', 14000, '63254baa22a3f.jfif');
 
 -- --------------------------------------------------------
@@ -76,10 +76,9 @@ CREATE TABLE `tb_transaksi` (
 --
 
 INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `menu`, `total`, `status`, `timestamp`) VALUES
-(6, 5, 'nasi padang', 14000, 0, '2022-10-07'),
-(7, 5, 'nasi kotak', 25000, 0, '2022-10-07'),
-(8, 5, 'nasi padang', 56000, 0, '2022-10-07'),
-(9, 5, 'nasi kotak', 50000, 0, '2022-10-07');
+(15, 5, 'nasi kotak', 84000, 0, '2023-01-12'),
+(16, 5, 'nasi kotak', 84000, 0, '2023-01-21'),
+(17, 5, 'nasi padang', 28000, 1, '2023-01-21');
 
 -- --------------------------------------------------------
 
@@ -99,10 +98,9 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `level`) VALUES
-(1, 'vodapermadi', '123', 'admin'),
-(2, 'kasir', '123', 'kasir'),
-(5, 'user', '123', 'user'),
-(7, 'user2', '123', 'user');
+(1, 'admin', 'admin', 'admin'),
+(2, 'kasir', 'kasir', 'kasir'),
+(5, 'user', 'user', 'user');
 
 --
 -- Indexes for dumped tables
@@ -115,7 +113,8 @@ ALTER TABLE `tb_cart`
   ADD PRIMARY KEY (`id_cart`),
   ADD KEY `id_cart` (`id_cart`),
   ADD KEY `id_menu` (`id_menu`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_menu_2` (`id_menu`);
 
 --
 -- Indexes for table `tb_menu`
@@ -147,19 +146,19 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_cart`
 --
 ALTER TABLE `tb_cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
